@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لوحة تحكم الجمعيات الخيرية</title>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<!-- Leaflet Routing Machine CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>📍 لوحة تحكم الجمعيات الخيرية</header>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h3>إدارة الجمعيات</h3>
+        <input type="text" id="name" placeholder="اسم الجمعية">
+        <input type="text" id="lat" placeholder="Latitude">
+        <input type="text" id="lng" placeholder="Longitude">
+
+        <select id="city">
+            <option value="الجزائر">الجزائر</option>
+            <option value="وهران">وهران</option>
+            <option value="تيارت">تيارت</option>
+        </select>
+
+        <select id="type">
+            <option value="إطعام">إطعام</option>
+            <option value="مساعدة طبية">مساعدة طبية</option>
+            <option value="تعليم">تعليم</option>
+        </select>
+
+        <input type="text" id="phone" placeholder="هاتف الجمعية">
+
+        <button onclick="addAssociation()">➕ إضافة جمعية</button>
+        <button onclick="filterAssociations()">🔍 فلترة</button>
+        <button onclick="locateAndFindNearest()">📍 أقرب جمعية</button>
+
+        <h3>قائمة الجمعيات</h3>
+        <ul id="associationList"></ul>
+
+    </div>
+
+    <div id="map"></div>
+
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet Routing Machine JS -->
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
